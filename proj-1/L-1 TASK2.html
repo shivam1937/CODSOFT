@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #1e272e;
+    line-height: 1.6;
+    background-color: #ebedef;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #d4e6f1;
+    color: #2c3e50;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2874a6;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav ul li {
+    margin-left: 20px;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #1e272e;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav ul li a:hover {
+    color: #21618c;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 20px;
+    background: linear-gradient(to right, #dae6f3, #ebedef);
+    color: #2c3e50;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #21618c;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero-content .buttons .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background: #2874a6;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.hero-content .buttons .btn:hover {
+    background: #21618c;
+}
+
+.hero-image {
+    max-width: 50%;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+    padding: 80px 20px;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #21618c;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.about img {
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about p {
+    max-width: 600px;
+    font-size: 1.1rem;
+    color: #616a6b;
+}
+
+
+.skills-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+    margin-top: 20px;
+}
+
+.skills-list li {
+    background: #fff;
+    border: 1px solid #a9cce3;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    width: 150px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.skills-list li:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.skills-list img {
+    max-width: 50px;
+    margin-bottom: 10px;
+}
+
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.project {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+    width: 300px;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+.project img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact {
+    text-align: center;
+    background: #dae6f3;
+    padding: 60px 20px;
+}
+
+.contact a {
+    color: #21618c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.contact a:hover {
+    color: #2874a6;
+}
+
+.contact .social-links {
+    margin-top: 20px;
+}
+
+.contact .social-links a {
+    margin: 0 10px;
+    font-size: 1.5rem;
+    color: #21618c;
+    transition: transform 0.3s;
+}
+
+.contact .social-links a:hover {
+    transform: scale(1.2);
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #dae6f3;
+    color: #616a6b;
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+.logo img{
+    width: 50px;
+    border-radius: 50%;
+}
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <img src="/Avery Davis.png" alt="">
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+  
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Hi all, I&#39;m Vishwesh Shukla <span class="wave">👋</span></h1>
+            <p>A passionate Full Stack Software Developer 🚀 having experience in building Web and Mobile applications with JavaScript / ReactJS / NodeJS and other modern frameworks.</p>
+            <div class="buttons">
+                <a href="#contact" class="btn contact">Contact Me</a>
+                <a href="your-resume.pdf" download class="btn resume">See My Resume</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://t3.ftcdn.net/jpg/06/01/17/18/360_F_601171862_l7yZ0wujj8o2SowiKTUsfLEEx8KunYNd.jpg" alt="Developer Illustration">
+        </div>
+    </section>
+
+
+    <section id="about" class="section about">
+        <h2>About Me</h2>
+        <img src="#" alt="Your Picture">
+        <p>Short bio highlighting your skills and experience.</p>
+    </section>
+
+
+    <section id="skills" class="section skills">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+            <li><img src="https://media.istockphoto.com/id/1415537875/photo/asian-graphic-designer-working-in-office-artist-creative-designer-illustrator-graphic-skill.jpg?s=612x612&w=0&k=20&c=9ufB0QZ-LPcz14zLh909QEEbmDmcfIYzhBsST3hXbMs=" alt="Skill 1"> Graphic</li>
+            <li><img src="https://media.istockphoto.com/id/1060739400/photo/web-design-technology-browsing-programming-concept.jpg?s=612x612&w=0&k=20&c=Hs5v5YMgJgagphtSj9P-446x39mXwuSlnMVpwZlvkOY=" alt="Skill 2"> Web design</li>
+            <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU_E6YgWc95x9yJwE3ScaXCbgrjac1Q-6New&s" alt="Skill 3"> Ui/ux design</li>
+        </ul>
+    </section>
+
+
+    <section id="projects" class="section projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Project Title</h3>
+            <img src="https://media.gettyimages.com/id/1335017652/vector/brochure-template-layout-design-corporate-business-annual-report-catalog-magazine-flyer.jpg?s=612x612&w=gi&k=20&c=Lk5PoOX8twLMLlH-Fz1uJdFeA4cvW6-8anSSm5dzZaA=" alt="Project Image">
+            <p>Short description of the project.</p>
+        </div>
+
+    </section>
+
+
+    <section id="resume" class="section resume">
+        <h2>Resume</h2>
+        <a href="your-resume.pdf" download class="btn">Download My Resume (PDF)</a>
+    </section>
+
+
+    <section id="contact" class="section contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:sprasant621@gmail.com">sprasant621@gmail.com</a></p>
+        <p>+91 99258 60808</p>
+        <div class="social-links">
+            <a href="https://github.com" target="_blank">GitHub</a>
+            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>
